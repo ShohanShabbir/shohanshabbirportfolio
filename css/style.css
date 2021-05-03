@@ -5,6 +5,7 @@
     --bg-black-900: #000000;
     --bg-black-100: #dddddd;
     --bg-black-50: #eff0f4;
+    --bg-opacity: rgba(255,255,255, 0.5);
     --text-black-900: #000000;
     --text-black-700: #555555;
     --text-black-600: #666666;
@@ -23,6 +24,10 @@ body{
     overflow-x: hidden;
     line-height: 1.5;
     background-color: var(--bg-black-50);
+    
+}
+body.stop-scrolling{
+    overflow-y: hidden;
 }
 *:not(i){
     font-family: 'Raleway', sans-serif;
@@ -347,6 +352,16 @@ header .hamburger-btn span::after{
         transform: translateX(25px);
     }
 }
+@keyframes fadeInTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .effect-4{
     border-top: 30px solid transparent;
     border-left: 30px solid #d71e06;
@@ -475,7 +490,12 @@ header .hamburger-btn span::after{
 .about-section .tab-content{
     flex: 0 0 100%;
     max-width: 100%;
+    display: none;
   
+}
+.about-section .tab-content.active{
+    display: block;
+    animation: fadeInTop 0.5s ease;
 }
 .about-section .skills .skill-item{
     flex: 0 0 50%;
@@ -760,4 +780,234 @@ header .hamburger-btn span::after{
 }
 .portfolio-section .portfolio-item-inner:hover .portfolio-item-img img{
     transform: translateY(-25px);
+}
+.portfolio-popup{
+    background-color: var(--bg-black-50);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility:hidden;
+    transition: all 0.3s ease;
+
+}
+.portfolio-popup .pp-loader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1005;
+    background-color: var(--bg-opacity);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+
+
+}
+.portfolio-popup .pp-loader.active{
+    visibility: visible;
+    opacity: 1;
+}
+.portfolio-popup .pp-loader div{
+    height: 40px;
+    width: 40px;
+    border: 3px solid var(--skin-color);
+    border-radius: 50%;
+    border-right:3px solid transparent ;
+    animation: spin 3s linear infinite;
+
+}
+.portfolio-popup .pp-img{
+   max-width: 100%;
+   width: auto;
+   height: auto;
+   padding: 10px;
+   border-radius: 5px;
+}
+.portfolio-popup .pp-main{
+    min-height: 100vh;
+    max-width: 1350px;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.portfolio-popup .pp-main-inner{
+   
+    padding: 70px 0 50px;
+    position: relative;
+}
+.portfolio-popup .pp-project-details-btn{
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--skin-color);
+    border-radius: 30px;
+    line-height: 40px;
+    top: 15px;
+    cursor: pointer;
+    padding: 0 15px;
+}
+.portfolio-popup .pp-project-details-btn i{
+    margin-left: 4px;
+
+}
+.portfolio-popup .pp-project-details-btn::after{
+    border-radius: 30px;
+}
+.portfolio-popup .pp-close{
+
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    top: 15px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 35px;
+    color: var(--text-black-600);
+    cursor: pointer;
+    transition: all .3s ease;
+    border-radius: 50%;
+}
+.portfolio-popup .pp-close::after{
+    border-radius: 50%;
+}
+.portfolio-popup .pp-counter{
+    height: 40px;
+    bottom: 5px;
+    position: absolute;
+    right: 0;
+    line-height: 40px;
+    font-size: 16px;
+    color: var(--text-black-600);
+}
+.portfolio-popup .pp-prev,
+.portfolio-popup .pp-next{
+    position: fixed;
+    top: 40px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-black-900);
+    transition: all .3s ease;
+    opacity: 0.5;
+
+}
+.portfolio-popup .pp-prev:hover,
+.portfolio-popup .pp-next:hover{
+    opacity: 1;
+}
+.portfolio-popup .pp-prev i,
+.portfolio-popup .pp-next i{
+    line-height: 40px;
+}
+.portfolio-popup .pp-prev i{
+    transform: rotate(180deg);
+}
+.portfolio-popup .pp-prev{
+    left: 15px;
+    top: 400px;
+}
+
+.portfolio-popup .pp-next{
+    right: 15px;
+    top: 400px;
+}
+.portfolio-popup .pp-details{
+    margin: auto;
+    max-width: 1350px;
+    width: calc(85% + 30px);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+.portfolio-popup .pp-details.active{
+    opacity: 1;
+}
+.portfolio-popup .pp-details-inner{
+    padding: 30px 0;
+}
+.portfolio-popup .separator{
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color:var(--bg-black-50);
+}
+.portfolio-popup .description{
+    flex: 0 0 65%;
+    max-width: 65%;
+}
+.portfolio-popup .description p{
+    font-size: 16px;
+    color:var(--text-black-600);
+    line-height: 26px;
+}
+.portfolio-popup .info{
+    flex: 0 0 35%;
+    max-width: 35%;
+}
+.portfolio-popup .pp-title h2{
+    font-size: 28px;
+    color: var(--text-black-900);
+    font-weight: 600;
+    margin: 0 0 5px;
+    
+}
+.portfolio-popup .pp-title p{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-black-600);
+    margin: 0 0 15px;
+    border-bottom: 1px solid var(--bg-black-100);
+
+}
+.portfolio-popup .pp-title p span{
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.portfolio-popup .pp-project-details h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-black-700);
+    margin: 0 0 15px;
+    text-transform: capitalize;
+
+}
+.portfolio-popup .info ul li{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-black-600);
+    font-size: 16px;
+}
+.portfolio-popup .info ul li span{
+    font-weight: 400;
+}
+.portfolio-popup .info ul li:last-child{
+    margin-bottom: 0;
+}
+.portfolio-section .portfolio-item.hide{
+    display: none;
+}
+.portfolio-section .portfolio-item.show{
+    display: block;
+    animation: fadeInTop 0.3s ease;
+}
+.portfolio-popup.open{
+    visibility: visible;
+    opacity: 1;
 }
