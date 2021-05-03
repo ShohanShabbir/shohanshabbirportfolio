@@ -164,3 +164,55 @@
 function bodyScrollingToggle(){
     document.body.classList.toggle("stop-scrolling");
 }
+
+(()=>{
+
+    const slideContainer = document.querySelector(".testi-slider-container"),
+    slides = slideContainer.querySelectorAll(".testi-item");
+    slideWidth = slideContainer.offsetWidth;
+
+    prevBtn = document.querySelector(".testi-slider-nav .prev"),
+    nextBtn = document.querySelector(".testi-slider-nav .next");
+    activeSlide = slideContainer.querySelector(".testi-item.active");
+
+    
+    let slideIndex = Array.from(activeSlide.parentElement.children).indexOf(activeSlide);
+    slides.forEach((slides)=>{
+        slides.style.width = slideWidth + "px";
+
+    })
+    slideContainer.style.width = slideWidth * slides.length + "px";
+
+    nextBtn.addEventListener("click", () =>{
+
+        if(slideIndex === slides.length - 1){
+            slideIndex = 0;
+        }
+        else{
+            slideIndex++;
+        }
+        slider();
+    })
+    prevBtn.addEventListener("click" , () =>{
+        if(slideIndex === 0){
+            slideIndex = slides.length - 1;
+        }
+        else{
+            slideIndex--;
+        }
+        slider();
+
+        
+       
+        
+    })
+    function slider(){
+        slideContainer.querySelector(".testi-item.active").classList.remove("active");
+        slides[slideIndex].classList.add("active");
+        slideContainer.style.marginLeft = - (slideWidth * slideIndex) + "px";
+    }
+    slider();
+   
+    
+
+})();
