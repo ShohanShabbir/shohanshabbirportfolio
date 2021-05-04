@@ -8,8 +8,25 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
   <!-- main css -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/skins/color-1.css">
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-1"  href="css/skins/color-1.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-2"  href="css/skins/color-2.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-3"  href="css/skins/color-3.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-4"  href="css/skins/color-4.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5"  href="css/skins/color-5.css" disabled>
+  <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
 </head>
 <body>
+
+
+    <div class="preloader">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <header class="header">
       <div class="container">
         <div class="row justify-content-between">
@@ -27,17 +44,22 @@
       <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
       <div class="nav-menu-inner">
         <ul>
-          <li><a href="" class="inner-shadow active">Home</a></li>
-          <li><a href="" class="outer-shadow hover-in-shadow">About</a></li>
-          <li><a href="" class="outer-shadow hover-in-shadow">Services</a></li>
-          <li><a href="" class="outer-shadow hover-in-shadow">Portfolio</a></li>
-          <li><a href="" class="outer-shadow hover-in-shadow">Contact</a></li>
+          <li><a href="#home" class="link-item inner-shadow active">Home</a></li>
+          <li><a href="#about" class="link-item outer-shadow hover-in-shadow">About</a></li>
+          <li><a href="#services" class="link-item outer-shadow hover-in-shadow">Services</a></li>
+          <li><a href="#portfolio" class="link-item outer-shadow hover-in-shadow">Portfolio</a></li>
+          <li><a href="#testimonial" class="link-item outer-shadow hover-in-shadow">Testimonials</a></li>
+          <li><a href="#blogs" class="link-item outer-shadow hover-in-shadow">Blogs</a></li>
+          <li><a href="#contact" class="link-item outer-shadow hover-in-shadow">Contact</a></li>
         </ul>
       </div>
       <p class="copy-right">&copy; 2021 Shohan Shabbir</p>
+      
     </nav>
+    
+    
   
-    <section class="home-section section">
+    <section class="home-section section active" id="home">
       <div class="effect-wrap">
          <div class="effect effect-1"></div>
          <div class="effect effect-2">
@@ -72,6 +94,36 @@
          </div>
          <div class="effect effect-3"></div>
          <div class="effect effect-4"></div>
+         <div class="effect effect-5">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
       <div class="container">
         <div class="row full-screen align-items-center">
@@ -79,7 +131,7 @@
             <p>Hello</p>
             <h2>I'm Md.Shohanur Alam</h2>
             <h1>Full Stack Web Developer</h1>
-            <a href="#" class="btn-1 outer-shadow hover-in-shadow">More About Me</a>
+            <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
           </div>
           <div class="home-img">
               <div class="img-box inner-shadow">
@@ -90,7 +142,7 @@
       </div>
     </section>
 
-    <section class="about-section section">
+    <section class="about-section section" id="about">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -117,7 +169,7 @@
                   web application using different technologies and looking forward to exploring more. As you'll see, I
                   have hands-on experience in building web application using modern HTML, CSS, JavaScript, React.js &
                   Node.js</p>
-                  <a href="Resume of Md.Shohanur Alam.pdf" class="btn-1 outer-shadow hover-in-shadow">Download Resume</a>
+                  <a href="Resume of Md.Shohanur Alam.pdf" class="link-item btn-1 outer-shadow hover-in-shadow">Download Resume</a>
           </div>
         </div>
         <div class="row">
@@ -320,7 +372,7 @@
     </div>
     </section>
 
-    <section class="service-section section">
+    <section class="service-section section" id="services">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -387,7 +439,7 @@
       </div>
     </section>
 
-    <section class="portfolio-section section">
+    <section class="portfolio-section section" id="portfolio">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -415,7 +467,7 @@
               <div class="portfolio-item-details">
                 <div class="row">
                   <div class="description">
-                    <h2>Project Brief</h2>
+                    <h3>Project Brief</h3>
                     <p>
                       . Build a web application using MERN stack <br>
                       . For payment system used one of the most popular payment gateway system(stripe) <br>
@@ -448,7 +500,7 @@
               <div class="portfolio-item-details">
                 <div class="row">
                   <div class="description">
-                    <h2>Project Brief</h2>
+                    <h3>Project Brief</h3>
                     <p>
                        Build a web application using MERN stack <br>
                        User can book rides from different rides option <br>
@@ -481,7 +533,7 @@
               <div class="portfolio-item-details">
                 <div class="row">
                   <div class="description">
-                    <h2>Project Brief</h2>
+                    <h3>Project Brief</h3>
                     <p>
                       . Build a web application using MERN stack <br>
                       . For payment system used one of the most popular payment gateway system(stripe) <br>
@@ -514,7 +566,7 @@
               <div class="portfolio-item-details">
                 <div class="row">
                   <div class="description">
-                    <h2>Project Brief</h2>
+                    <h3>Project Brief</h3>
                     <p>
                       . Build a web application using MERN stack <br>
                       . For payment system used one of the most popular payment gateway system(stripe) <br>
@@ -547,7 +599,7 @@
               <div class="portfolio-item-details">
                 <div class="row">
                   <div class="description">
-                    <h2>Project Brief</h2>
+                    <h3>Project Brief</h3>
                     <p>
                       . Build a web application using MERN stack <br>
                       . For payment system used one of the most popular payment gateway system(stripe) <br>
@@ -658,7 +710,24 @@
       </div>
     </div>
 
-    <section class="testimonial-section section">
+    <div class="style-switcher outer-shadow">
+      <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-night s-icon outer-shadow hover-in-shadow">
+        <i class="fas fa-sun"></i>
+      </div>
+      <h4>Theme Colors</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActivateStyle('color-1')"></span>
+        <span class="color-2" onclick="setActivateStyle('color-2')"></span>
+        <span class="color-3" onclick="setActivateStyle('color-3')"></span>
+        <span class="color-4" onclick="setActivateStyle('color-4')"></span>
+        <span class="color-5" onclick="setActivateStyle('color-5')"></span>
+      </div>
+    </div>
+
+    <section class="testimonial-section section" id="testimonial">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -700,7 +769,7 @@
         </div>
       </div>
     </section>
-    <section class="portfolio-section section">
+    <section class="portfolio-section section" id="blogs">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -777,7 +846,7 @@
         </div>
       </div>
     </section>
-    <section class="contact-section section">
+    <section class="contact-section section" id="contact">
       <div class="container">
         <div class="row">
           
@@ -831,7 +900,7 @@
                   </div>
                   <div class="row">
                     <div class="submit-btn">
-                      <button type="submit" class="btn-1 outer-shadow hover-in-shadow">Send Message</button>
+                      <a href="#" class="link-item btn-1 outer-shadow hover-in-shadow">Send Message</a> 
                     </div>
                   </div>
                 </form>
